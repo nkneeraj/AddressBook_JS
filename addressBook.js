@@ -162,10 +162,23 @@ function getContactForState(state){
     return contactArray.filter(contact=> contact.state==state);
 }
 
+function searchPersonInCity(firstName,city){
+    contactListForCity=contactArray.filter(contact=> contact.city==city && contact.firstName==firstName);
+    if(contactListForCity.length>0)
+        return true;
+    else return false;
+}
+function searchPersonInState(firstName,state){
+    contactListForState=contactArray.filter(contact=> contact.state==state && contact.firstName==firstName);
+    if(contactListForState.length>0)
+        return true;
+    else return false;
+}
+
 try{
     let contact1=new Contact("Neeraj","Kumar","indrapuri","patna","bihar",800024,"91 9900887766","abc@gmail.com");
     let contact2=new Contact("Neeraj","Kumar","indrapuri","patna","bihar",800024,"91 9900887766","abc@gmail.com");
-    let contact3=new Contact("Neeraj1","Kumar","indrapuri","bhadra","bihar",800024,"91 9900887766","abc@gmail.com");
+    let contact3=new Contact("Neeraj1","Kumar","indrapuri","bhadra","rajasthan",800024,"91 9900887766","abc@gmail.com");
 
     addContact(contact1);
     addContact(contact2);
@@ -174,7 +187,7 @@ try{
     console.log(exception)
 }
 
-console.log("contacts for particular city");
-console.log(getContactForCity("bhadra"));
+console.log(searchPersonInCity("Neeraj","bhadra"));
+console.log(searchPersonInState("Neeraj1","rajasthan"));
 
 

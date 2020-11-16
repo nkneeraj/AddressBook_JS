@@ -155,10 +155,17 @@ function addContact(contact){
     console.log("contact already exits");
 }
 
+function getContactForCity(city){
+    return contactArray.filter(contact=> contact.city==city);
+}
+function getContactForState(state){
+    return contactArray.filter(contact=> contact.state==state);
+}
+
 try{
     let contact1=new Contact("Neeraj","Kumar","indrapuri","patna","bihar",800024,"91 9900887766","abc@gmail.com");
     let contact2=new Contact("Neeraj","Kumar","indrapuri","patna","bihar",800024,"91 9900887766","abc@gmail.com");
-    let contact3=new Contact("Neeraj1","Kumar","indrapuri","patna","bihar",800024,"91 9900887766","abc@gmail.com");
+    let contact3=new Contact("Neeraj1","Kumar","indrapuri","bhadra","bihar",800024,"91 9900887766","abc@gmail.com");
 
     addContact(contact1);
     addContact(contact2);
@@ -167,6 +174,7 @@ try{
     console.log(exception)
 }
 
-console.log("size of contact list "+getNumberOfContacts());
+console.log("contacts for particular city");
+console.log(getContactForCity("bhadra"));
 
 

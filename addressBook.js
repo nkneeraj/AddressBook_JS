@@ -144,6 +144,10 @@ function deleteContact(firstName,lastName){
     }
 }
 
+function getNumberOfContacts(){
+    return contactArray.reduce(count=> count+1,0);
+}
+
 try{
     let contact1=new Contact("Neeraj","Kumar","indrapuri","patna","bihar",800024,"91 9900887766","abc@gmail.com");
     let contact2=new Contact("Neeraj","Kumar","indrapuri","patna","bihar",800024,"91 9900887766","abc@gmail.com");
@@ -152,11 +156,10 @@ try{
     contactArray.push(contact1);
     contactArray.push(contact2);
     contactArray.push(contact3);
-}catch(exception){
+}catch(exception){git 
     console.log(exception)
 }
 
-deleteContact("Neeraj","Kumar");
-console.log("After deletion");
-console.log(contactArray);
+console.log("size of contact list "+getNumberOfContacts());
+
 

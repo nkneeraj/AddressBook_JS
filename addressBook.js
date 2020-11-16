@@ -188,10 +188,20 @@ function sortByContactName(){
     contactArray.sort((contact1, contact2) => contact1.firstName.localeCompare(contact2.firstName));
 }
 
+function sortByCityName(){
+    contactArray.sort((contact1, contact2) => contact1.city.localeCompare(contact2.city));
+}
+function sortByStateName(){
+    contactArray.sort((contact1, contact2) => contact1.state.localeCompare(contact2.state));
+}
+function sortByZipCode(){
+    contactArray.sort((contact1, contact2) => contact1.zip-contact2.zip);
+}
+
 try{
-    let contact1=new Contact("Neeraj","Kumar","indrapuri","patna","bihar",800024,"91 9900887766","abc@gmail.com");
-    let contact2=new Contact("Neeraj2","Kumar","indrapuri","patna","bihar",800024,"91 9900887766","abc@gmail.com");
-    let contact3=new Contact("Neeraj1","Kumar","indrapuri","bhadra","rajasthan",800024,"91 9900887766","abc@gmail.com");
+    let contact1=new Contact("Neeraj","Kumar","indrapuri","patna","bihar",800021,"91 9900887766","abc@gmail.com");
+    let contact2=new Contact("Neeraj2","Kumar","indrapuri","patna","bihar",800023,"91 9900887766","abc@gmail.com");
+    let contact3=new Contact("Neeraj1","Kumar","indrapuri","bhadra","rajasthan",800022,"91 9900887766","abc@gmail.com");
 
     addContact(contact1);
     addContact(contact2);
@@ -200,8 +210,16 @@ try{
     console.log(exception)
 }
 
-sortByContactName();
-console.log("after sorting by name ");
+sortByZipCode();
+console.log("after sorting by zip code ");
+console.log(contactArray);
+
+sortByCityName();
+console.log("after sorting by city name ");
+console.log(contactArray);
+
+sortByStateName();
+console.log("after sorting by state name ");
 console.log(contactArray);
 
 

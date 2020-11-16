@@ -184,9 +184,13 @@ function contactCountForState(state){
     return contactListForState.reduce(count=> count+1,0);
 }
 
+function sortByContactName(){
+    contactArray.sort((contact1, contact2) => contact1.firstName.localeCompare(contact2.firstName));
+}
+
 try{
     let contact1=new Contact("Neeraj","Kumar","indrapuri","patna","bihar",800024,"91 9900887766","abc@gmail.com");
-    let contact2=new Contact("Neeraj","Kumar","indrapuri","patna","bihar",800024,"91 9900887766","abc@gmail.com");
+    let contact2=new Contact("Neeraj2","Kumar","indrapuri","patna","bihar",800024,"91 9900887766","abc@gmail.com");
     let contact3=new Contact("Neeraj1","Kumar","indrapuri","bhadra","rajasthan",800024,"91 9900887766","abc@gmail.com");
 
     addContact(contact1);
@@ -196,7 +200,9 @@ try{
     console.log(exception)
 }
 
-console.log("Number of persons in aara is "+contactCountForCity("patna"));
-console.log("Number of persons  in bihar is "+contactCountForState("bihar"));
+sortByContactName();
+console.log("after sorting by name ");
+console.log(contactArray);
+
 
 

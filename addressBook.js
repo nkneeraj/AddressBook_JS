@@ -90,5 +90,16 @@ class Contact{
     }
     
 }
-contact=new Contact("Neeraj","Kumar","indrapuri","patna","bihar",800024,"91 9900887766","abc@gmail.com");
-console.log(contact.toString());
+let contactArray=new Array();
+try{
+    let contact1=new Contact("Neeraj","Kumar","indrapuri","patna","bihar",800024,"91 9900887766","abc@gmail.com");
+    let contact2=new Contact("Neeraj","Kumar","indrapuri","patna","bihar",800024,"91 9900887766","abc@gmail.com");
+    let contact3=new Contact("Neeraj","Kumar","indrapuri","patna","bihar",800024,"91 9900887766","abc@gmail.com");
+
+    contactArray.push(contact1);
+    contactArray.push(contact2);
+    contactArray.push(contact3);
+}catch(exception){
+    console.log(exception)
+}
+console.log(contactArray);

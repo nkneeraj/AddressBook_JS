@@ -135,6 +135,15 @@ function editContact(firstName,lastName){
     }
 }
 
+function deleteContact(firstName,lastName){
+    for(let i=0;i<contactArray.length;i++){
+        if(contactArray[i].firstName==firstName && contactArray[i].lastName==lastName){
+            contactArray.splice(i,i+1);
+            return;
+        }
+    }
+}
+
 try{
     let contact1=new Contact("Neeraj","Kumar","indrapuri","patna","bihar",800024,"91 9900887766","abc@gmail.com");
     let contact2=new Contact("Neeraj","Kumar","indrapuri","patna","bihar",800024,"91 9900887766","abc@gmail.com");
@@ -146,8 +155,8 @@ try{
 }catch(exception){
     console.log(exception)
 }
-console.log(contactArray);
-console.log(contactArray);
-editContact("Neeraj","Kumar");
+
+deleteContact("Neeraj","Kumar");
+console.log("After deletion");
 console.log(contactArray);
 

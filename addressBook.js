@@ -148,15 +148,22 @@ function getNumberOfContacts(){
     return contactArray.reduce(count=> count+1,0);
 }
 
+function addContact(contact){
+    if(findContact(contact.firstName,contact.lastName)==null)
+        contactArray.push(contact);
+    else 
+    console.log("contact already exits");
+}
+
 try{
     let contact1=new Contact("Neeraj","Kumar","indrapuri","patna","bihar",800024,"91 9900887766","abc@gmail.com");
     let contact2=new Contact("Neeraj","Kumar","indrapuri","patna","bihar",800024,"91 9900887766","abc@gmail.com");
-    let contact3=new Contact("Neeraj","Kumar","indrapuri","patna","bihar",800024,"91 9900887766","abc@gmail.com");
+    let contact3=new Contact("Neeraj1","Kumar","indrapuri","patna","bihar",800024,"91 9900887766","abc@gmail.com");
 
-    contactArray.push(contact1);
-    contactArray.push(contact2);
-    contactArray.push(contact3);
-}catch(exception){git 
+    addContact(contact1);
+    addContact(contact2);
+    addContact(contact3);
+}catch(exception){
     console.log(exception)
 }
 

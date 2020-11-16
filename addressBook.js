@@ -175,6 +175,15 @@ function searchPersonInState(firstName,state){
     else return false;
 }
 
+function contactCountForCity(city){
+    contactListForCity=contactArray.filter(contact=> contact.city==city);
+    return contactListForCity.reduce(count=> count+1,0);
+}
+function contactCountForState(state){
+    contactListForState=contactArray.filter(contact=> contact.state==state);
+    return contactListForState.reduce(count=> count+1,0);
+}
+
 try{
     let contact1=new Contact("Neeraj","Kumar","indrapuri","patna","bihar",800024,"91 9900887766","abc@gmail.com");
     let contact2=new Contact("Neeraj","Kumar","indrapuri","patna","bihar",800024,"91 9900887766","abc@gmail.com");
@@ -187,7 +196,7 @@ try{
     console.log(exception)
 }
 
-console.log(searchPersonInCity("Neeraj","bhadra"));
-console.log(searchPersonInState("Neeraj1","rajasthan"));
+console.log("Number of persons in aara is "+contactCountForCity("patna"));
+console.log("Number of persons  in bihar is "+contactCountForState("bihar"));
 
 
